@@ -3,3 +3,6 @@ build
 dist
 www
 .DS_Store
+.env*
+.nvmrc
+packaged-template.yml
