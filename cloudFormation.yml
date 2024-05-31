@@ -16,7 +16,7 @@ Resources:
   CognitoUserPool:
     Type: AWS::Cognito::UserPool
     Properties:
-      UserPoolName: user-pool
+      UserPoolName: example-serverless-bedrock-chat-user-pool
       UsernameConfiguration:
         CaseSensitive: false
       AdminCreateUserConfig:
@@ -242,7 +242,7 @@ Resources:
   WebsocketsApi:
       Type: 'AWS::ApiGatewayV2::Api'
       Properties:
-        Name: chatbot-websocket-api
+        Name: example-bedrock-chatbot-websocket-api
         RouteSelectionExpression: $request.body.action
         ProtocolType: WEBSOCKET
   ApplicationWebsocketsIntegration:
