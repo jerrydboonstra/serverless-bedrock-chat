@@ -40,6 +40,25 @@ The CloudFormation template can be found in the project root directory and requi
 - DeploymentBucketName - the name of the S3 bucket that was created previously to hold the Lambda code
 - UserEmail - a valid email address that will be used to create a Cognito user for the application, and send a confirmation mail to
 
+Set values for these as environment variables, which will be used during CF preparation and deployment eg.
+
+```sh
+AWS_REGION=us-east-2
+STACK_NAME=example-serverless-bedrock-chat
+BE_DEPLOYMENT_BUCKET=example-serverless-bedrock-chat
+FE_DEPLOYMENT_BUCKET=example-serverless-bedrock-chat-fe
+USER_EMAIL=you@example.com
+```
+
+### Deployment
+
+- Install AWS SAM CLI (if not already installed):
+    - Follow the [AWS SAM installation guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html).
+- Prepare the CF deployment:
+    - `make prepare-cf`
+- Deploy the CF deployment:
+    - `make deploy-cf`
+
 ### Cloudformation outputs
 When the CloudFormation stack has successfully completed, navigate to the outputs and make a note of the following parameters that you will need to update in the frontend code before you build and deploy it.
 
