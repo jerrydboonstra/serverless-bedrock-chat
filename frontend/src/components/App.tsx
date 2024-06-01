@@ -45,7 +45,7 @@ function App() {
     },
   );
 
-  const sendPrompt = async (event) => {
+  const sendPrompt = async (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key !== 'Enter') {
       return;
     }
@@ -58,7 +58,7 @@ function App() {
     });
   };
 
-  const [prompt, updatePrompt] = useState(undefined);
+  const [prompt, updatePrompt] = useState('');
   const [loading, setLoading] = useState(false);
   const [answer, setAnswer] = useState('');
 
@@ -70,9 +70,6 @@ function App() {
             type="text"
             className="spotlight__input"
             placeholder="Ask me anything..."
-            style={{
-              backgroundImage: `url(${lens})`,
-            }}
             disabled={loading}
             style={{
               backgroundImage: loading ? `url(${spinner})` : `url(${lens})`,
