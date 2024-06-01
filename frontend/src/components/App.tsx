@@ -45,7 +45,7 @@ function App() {
     },
   );
 
-  const sendPrompt = async (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const sendPrompt = async (event) => {
     if (event.key !== 'Enter') {
       return;
     }
