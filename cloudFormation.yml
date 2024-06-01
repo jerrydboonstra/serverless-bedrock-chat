@@ -152,7 +152,7 @@ Resources:
   APILogGroup:
     Type: 'AWS::Logs::LogGroup'
     Properties:
-      LogGroupName: !Sub 'example-serverless-bedrock-chat'
+      LogGroupName: !Sub '/aws/lambda/api'
   IamRoleLambdaExecution:
     Type: 'AWS::IAM::Role'
     Properties:
